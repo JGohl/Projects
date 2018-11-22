@@ -168,10 +168,10 @@ d3.csv("assets/data/data.csv").then(function(healthData, error) {
     .data(healthData)
     .enter()
     .append("circle")
+    .classed("stateCircle", true)
     .attr("cx", d => xLinearScale(d[chosenXAxis]))
     .attr("cy", d => yLinearScale(d[chosenYAxis]))
     .attr("r", 10)
-    .attr("fill", "#6699cc")
     .attr("opacity", ".5");
 
   var circleText = chartGroup.selectAll("circle")
@@ -244,8 +244,6 @@ d3.csv("assets/data/data.csv").then(function(healthData, error) {
 
         // replaces chosenXAxis with value
         chosenXAxis = xValue;
-
-        // console.log(chosenXAxis)
 
         // functions here found above csv import
         // updates x scale for new data
