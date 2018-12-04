@@ -37,9 +37,9 @@ var dark = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?acc
 
   // Create the map object with options
   var map = L.map("map-id", {
-    center: [61.21, -149.9],
-    zoom: 6,
-    layers: [streetMap, earthquakes]
+    center: [0, 0],
+    zoom: 2,
+    layers: [satellite, earthquakes]
   });
 
   // Create a layer control, pass in the baseMaps and overlayMaps. Add the layer control to the map
@@ -56,7 +56,7 @@ var dark = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?acc
                       'rgb(255,0,0)';
   }
 
-  var legend = L.control({position: 'bottomright'});
+  var legend = L.control("legend");
 
   legend.onAdd = function (map) {
   
